@@ -11,6 +11,22 @@ body {
   background: #343541;
 }
 
+.self-tag {
+  margin-top: 10px;
+  color: rgb(27, 255, 225);
+  font-size: 1.2 rem;
+  font-family: cursive;
+}
+
+.ai-credit {
+  padding-top: 5px;
+  color: #4e4646;
+  font-size: 1rem;
+  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+
+}
+
 #app {
   width: 100vw;
   height: 100vh;
