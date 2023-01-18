@@ -7,22 +7,23 @@
   font-family: "Alegreya Sans", sans-serif;
 }
 
-body {
-  background: #343541;
-}
+
 
 .self-tag {
   position: sticky;
   margin-top: 10px;
-  color: rgb(49 191 172 / 89%);
+  color: rgb(91 194 255);
   font-size: 1.2 rem;
-  font-family: cursive;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  font-weight: 500;
 }
 
 .ai-credit {
   padding-top: 5px;
   color: #4e4646;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: 'Nunito Sans', sans-serif;
   font-family: 'Roboto', sans-serif;
 
@@ -37,6 +38,41 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+
+  background: linear-gradient(rgb(0 0 0), rgb(0 0 0 / 0%)), url(/client/assets/ai.gif), linear-gradient(45deg, black, black);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.info-banner-wrapper {
+  height: 25vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-banner-wrapper>.item1>h4 {
+  color: #fff;
+  position: relative;
+  margin-top: 20vh;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px #ef2020;
+}
+
+.info-banner-wrapper>.item2>p {
+  color: #ffffffa4;
+  width: 70vw;
+  line-height: 2;
+  position: relative;
+  margin: 1rem auto auto 2.5rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-style: italic;
 }
 
 #chat_container {
@@ -126,7 +162,7 @@ body {
 form {
   width: 100%;
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 0 auto 1rem auto;
   padding: 10px;
   background: #0e0e14b0;
 
