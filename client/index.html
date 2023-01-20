@@ -27,13 +27,22 @@
       </p>
       <div id="chat_container"></div>
 
-      <form>
+      <form id="write">
         <textarea name="prompt" rows="1" cols="1" placeholder="Ask Sassy -your coding AI assistant"></textarea>
         <button type="submit"><img src="assets/send.png" alt="send" />
       </form>
     </div>
 
     <script type="module" src="script.js"></script>
+    <script>
+      var elem = document.getElementsByClassName('info-banner-wrapper')[0];
+      var write = document.getElementById('write');
+      write.onclick = function () {
+        elem.style.display = "none";
+      }
+
+    </script>
+
   </body>
 
 </html>
