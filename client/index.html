@@ -5,44 +5,71 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sassy -Your Coding Assistance</title>
+    <title>Codex - Your Coding Assistance</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <div id="app">
-      <p class="self-tag">Made with <span>💝</span> by Brij <span>😊</span> <br>
-      <p class="ai-credit">using OpenAI</p>
-
-      <div class="info-banner-wrapper">
-        <div class="item1">
-          <h4>
-            Ask me anything...
-          </h4>
-        </div>
-        <div class="item2">
-          <p>Like "Tell me about Rigveda" or "Write an essay on Sustainable Development" etc...</p>
-        </div>
-      </div>
+    <div id="app" class="night-theme">
+      <p class="self-tag">Made with <span>💝</span> by Brij Shyam <span>😊</span> <br>
+      <p class="ai-credit">using OpenAi</p>
       </p>
+      <!-- theme button  -->
+      <button class="btn-switcher" id="theme"></button>
       <div id="chat_container"></div>
-
-      <form id="write">
-        <textarea name="prompt" rows="1" cols="1" placeholder="Ask Sassy -your coding AI assistant"></textarea>
+      <form>
+        <textarea name="prompt" rows="1" cols="1" placeholder="Ask Sassy -your coding assistant"></textarea>
         <button type="submit"><img src="assets/send.png" alt="send" />
       </form>
+      <!-- <p>Hi, Made with Love by Brij Shyam</p> -->
     </div>
-
-    <script type="module" src="script.js"></script>
-    <script>
-      var elem = document.getElementsByClassName('info-banner-wrapper')[0];
-      var write = document.getElementById('write');
-      write.onclick = function () {
-        elem.style.display = "none";
-      }
-
-    </script>
-
+    <script defer type="module" src="script.js"></script>
   </body>
+  <script>
+    const themeBtn = document.getElementById('theme');
+    let flag = false;
+    themeBtn.addEventListener('click', (e) => {
+      let mainDiv = document.querySelector('#app');
+      const styleSheet = document.styleSheets[0];
+      const rules = styleSheet.cssRules;
+      if (!flag) {
+        flag = true;
+        mainDiv.classList.remove('night-theme');
+        mainDiv.classList.add('day-theme');
+        /* styleSheet.insertRule('.btn-switcher::after { background-color: red; }', styleSheet.cssRules.length);
+        styleSheet.insertRule('.btn-switcher::after { content: ""; }', styleSheet.cssRules.length); */
+        for (let i = 0; i < rules.length; i++) {
+          if (rules[i].selectorText === '.btn-switcher::after') {
+            rules[i].style.content = " url('./assets/sun.svg')";
+            rules[i].style.left = '1rem'
+            rules[i - 1].style.border = '#00ABB3 4px solid'
+            break;
+          }
+        }
+        document.querySelector('.self-tag').style.color = '#F2921D'
+        document.querySelector('.ai-credit').style.color = '#ddd'
+        document.querySelector('form').style.backgroundColor = '#B2B2B2'
+
+
+      } else {
+        flag = false;
+        mainDiv.classList.remove('day-theme');
+        mainDiv.classList.add('night-theme');
+        for (let i = 0; i < rules.length; i++) {
+          if (rules[i].selectorText === '.btn-switcher::after') {
+            rules[i].style.content = " url('./assets/moon.svg')";
+            rules[i].style.left = '4rem'
+            rules[i - 1].style.border = '#e6e6e6 4px solid'
+            break;
+          }
+        }
+        document.querySelector('.self-tag').style.color = '#ddd'
+        document.querySelector('.ai-credit').style.color = '#4e4646'
+        document.querySelector('form').style.backgroundColor = '#40414F';
+      }
+    });
+
+
+  </script>
 
 </html>
