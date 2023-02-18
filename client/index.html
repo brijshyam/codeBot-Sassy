@@ -40,7 +40,7 @@
         styleSheet.insertRule('.btn-switcher::after { content: ""; }', styleSheet.cssRules.length); */
         for (let i = 0; i < rules.length; i++) {
           if (rules[i].selectorText === '.btn-switcher::after') {
-            rules[i].style.content = " url('/assets/sun.svg')";
+            rules[i].style.content = " url('./assets/sun.svg')";
             rules[i].style.left = '1rem'
             rules[i - 1].style.border = '#00ABB3 4px solid'
             break;
@@ -49,15 +49,14 @@
         document.querySelector('.self-tag').style.color = '#F2921D'
         document.querySelector('.ai-credit').style.color = '#ddd'
         document.querySelector('form').style.backgroundColor = '#B2B2B2'
-
-
+        document.querySelector('.ai').style.opacity = '0.2'
       } else {
         flag = false;
         mainDiv.classList.remove('day-theme');
         mainDiv.classList.add('night-theme');
         for (let i = 0; i < rules.length; i++) {
           if (rules[i].selectorText === '.btn-switcher::after') {
-            rules[i].style.content = " url('/assets/moon.svg')";
+            rules[i].style.content = " url('./assets/moon.svg')";
             rules[i].style.left = '4rem'
             rules[i - 1].style.border = '#e6e6e6 4px solid'
             break;
